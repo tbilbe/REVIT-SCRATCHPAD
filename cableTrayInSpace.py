@@ -14,7 +14,7 @@ def dropPointInRoom (point):
     lowerZPoint = point[2] - belowCeilingReducer
     inRoomMidpoint = XYZ(point[0], point[1], lowerZPoint)
     return inRoomMidpoint
-
+#abstract this function to work with cableTraylengths as well as mep objs (pipe, duct)
 def wholeDuctInRoom (space, mepObj):
     p1 = mepObj.Location.Curve.GetEndPoint(0)
     p2 = mepObj.Location.Curve.GetEndPoint(1)
