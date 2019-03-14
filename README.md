@@ -7,6 +7,7 @@ The main focus of this scratchpad is to test out and develop proof of concepts.
 
 # TODOs! 
 
+- [ ] *CREATE BUTTONS ON RIBBON FOR DISTRIBUTION READY CODE*
 - [x] Duct length and Ductwork Surface Area Calculator :boom:
 - [x] Duct Location - Apply room name, room number to ductwork. :boom:
 - [ ] Cable tray location and Length calcs
