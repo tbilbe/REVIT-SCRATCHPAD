@@ -16,6 +16,11 @@ The main focus of this scratchpad is to test out and develop proof of concepts.
      - [ ] Break systems down into MEP classes - Duct/ Air : Pipe/Liquid fluid : CableTray/ Elec
      - [ ] Capture all plant not assigned to MEP System - Number of items, analysis of which system is worse (Elec / Mech)
 - [x] Room and Space name application
+     - [x] Understand method how to calculate if object is in Room/ Space.
+     - [ ] Create scripts for both lenghts and fittings:
+          - [ ] Ventilation
+          - [ ] Pipe
+          - [x] Cable tray
 - [ ] Create possible d3 visualisations of all this data collection?
      - [x] Understand how to transact and with document and create file.writeStream()
      - [x] Create a file either .txt or .csv as direct export from Revit document
