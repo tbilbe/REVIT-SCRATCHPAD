@@ -25,23 +25,22 @@ def wholeDuctInRoom (space, mepObj):
     else:
         return False
 
-t = Transaction(doc, 'Lets fucking do this again')
+t = Transaction(doc, 'CableTray Space naming')
 t.Start()
 
 for space in SpaceCollector:
 	for cTray in cTrayCollector:
 		spaceNumber = space.LookupParameter('Number')
 		spaceName = space.LookupParameter('Name')
-		setBBKLoc = cTray.LookupParameter('BBK_MEP_LOCATION')
-		if setBBKLoc.AsString() != None:
-			if spaceNumber.AsString() == setBBKLoc.AsString():
-				print('already set correct number: ' + str(spaceNumber.AsString()))
-				continue
-			else:
-				setBBKLoc.SetValueString(None)
-		if setBBKLoc.AsString() == None:
+		setBBKLocation = cTray.LookupParameter('BBK_MEP_LOCATION')
+		# if setBBKLocation.AsString() != None:
+		# 	if spaceNumber.AsString() == setBBKLocation.AsString():
+		# 		print('already set correct number: ' + str(spaceNumber.AsString()))
+		# 		continue
+		#     setBBKLocation.Set('')
+		if setBBKLocation.AsString() == '':
 			if space.IsPointInSpace(dropPointInRoom(midpoint(cTray))) and wholeDuctInRoom(space, cTray):
-				setBBKLoc.Set(spaceNumber.AsString())
+				setBBKLocation.Set(spaceNumber.AsString())
 			if space.IsPointInSpace(dropPointInRoom(midpoint(cTray))) and not wholeDuctInRoom(space, cTray):
-				setBBKLoc.Set(str(spaceNumber.AsString()) + ': Duct in two spaces')
+				setBBKLocation.Set(str(spaceNumber.AsString()) + ': Duct in two spaces')
 t.Commit()
