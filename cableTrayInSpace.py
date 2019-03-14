@@ -14,7 +14,7 @@ def dropPointInRoom (point):
     lowerZPoint = point[2] - belowCeilingReducer
     inRoomMidpoint = XYZ(point[0], point[1], lowerZPoint)
     return inRoomMidpoint
-#abstract this function to work with cableTraylengths as well as mep objs (pipe, duct)
+
 def wholeDuctInRoom (space, mepObj):
     p1 = mepObj.Location.Curve.GetEndPoint(0)
     p2 = mepObj.Location.Curve.GetEndPoint(1)
@@ -30,15 +30,18 @@ t.Start()
 
 for space in SpaceCollector:
 	for cTray in cTrayCollector:
+		spaceNumber = space.LookupParameter('Number')
+		spaceName = space.LookupParameter('Name')
 		setBBKLoc = cTray.LookupParameter('BBK_MEP_LOCATION')
+		if setBBKLoc.AsString() != None:
+			if spaceNumber.AsString() == setBBKLoc.AsString():
+				print('already set correct number: ' + str(spaceNumber.AsString()))
+				continue
+			else:
+				setBBKLoc.SetValueString(None)
 		if setBBKLoc.AsString() == None:
 			if space.IsPointInSpace(dropPointInRoom(midpoint(cTray))) and wholeDuctInRoom(space, cTray):
-				spaceNumber = space.LookupParameter('Number')
-				spaceName = space.LookupParameter('Name')
-				setBBKLoc.Set(spaceNumber.AsString())	
+				setBBKLoc.Set(spaceNumber.AsString())
 			if space.IsPointInSpace(dropPointInRoom(midpoint(cTray))) and not wholeDuctInRoom(space, cTray):
-				spaceNumber = space.LookupParameter('Number')
-				spaceName = space.LookupParameter('Name')
-				setBBKLoc = cTray.LookupParameter('BBK_MEP_LOCATION')
 				setBBKLoc.Set(str(spaceNumber.AsString()) + ': Duct in two spaces')
 t.Commit()
