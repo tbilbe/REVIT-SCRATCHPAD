@@ -26,3 +26,14 @@ The main focus of this scratchpad is to test out and develop proof of concepts.
      - [x] Understand how to transact and with document and create file.writeStream()
      - [x] Create a file either .txt or .csv as direct export from Revit document
      - [ ] Use export to create visualisations to avoid imports into Revit Python Wrapper :dizzy_face:
++ Visulation types:
+     - [ ] Systems - Named vs. Unnamed
+     - [ ] Systems - MEP Broken down by DUCT vs. PIPE vs. ELEC
+     - [ ] Systems - MEP Broken down by Service:
+          + DUCT - Services
+          + PIPE - Services
+          + Elec - Services
+     - [ ] Linked model data vs MEP consultant model
+          -> If MEP model has been linked to room names/ numbers
+          -> If Grids/Levels have Copy/Monitor applied
+          
