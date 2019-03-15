@@ -40,4 +40,3 @@ The main focus of this scratchpad is to test out and develop proof of concepts.
 ---
 # UNKNOWNS
 * try to get all air terminals - add location information here
-* 
