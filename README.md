@@ -34,6 +34,10 @@ The main focus of this scratchpad is to test out and develop proof of concepts.
           + PIPE - Services
           + Elec - Services
      - [ ] Linked model data vs MEP consultant model
-          -> If MEP model has been linked to room names/ numbers
-          -> If Grids/Levels have Copy/Monitor applied
-          
+          * If MEP model has been linked to room names/ numbers
+          * If Grids/Levels have Copy/Monitor applied
+
+---
+# UNKNOWNS
+* try to get all air terminals - add location information here
+* 
