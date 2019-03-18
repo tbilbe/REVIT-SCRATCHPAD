@@ -33,11 +33,6 @@ for space in SpaceCollector:
 		spaceNumber = space.LookupParameter('Number')
 		spaceName = space.LookupParameter('Name')
 		setBBKLocation = pipe.LookupParameter('BBK_MEP_LOCATION')
-		# if setBBKLocation.AsString() != None:
-		# 	if spaceNumber.AsString() == setBBKLocation.AsString():
-		# 		print('already set correct number: ' + str(spaceNumber.AsString()))
-		# 		continue
-		#     setBBKLocation.Set('')
 		if setBBKLocation.AsString() == '':
 			if space.IsPointInSpace(dropPointInRoom(midpoint(pipe))) and wholeDuctInRoom(space, pipe):
 				setBBKLocation.Set(spaceNumber.AsString())
