@@ -22,3 +22,4 @@ for space in SpaceCollector:
 				setBBKLoc.Set(str(spaceNumber.AsString()) + ': '+ str(spaceName.AsString()))
 				
 t.Commit()
+__window__.Close()
