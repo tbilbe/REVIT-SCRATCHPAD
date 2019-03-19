@@ -4,7 +4,7 @@ These code snippets can be ran inside the python ide in an active Revit project.
 I will be adding more and more scripts as ideas come to me.
 
 # What the Buttons look like so far!
-
+![Capture](https://user-images.githubusercontent.com/26323783/54621454-ac070300-4a5f-11e9-87c2-895add0142c5.PNG)
 
 The main focus of this scratchpad is to test out and develop proof of concepts.
 
