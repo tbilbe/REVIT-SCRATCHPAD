@@ -3,6 +3,9 @@
 These code snippets can be ran inside the python ide in an active Revit project. :snake:
 I will be adding more and more scripts as ideas come to me.
 
+# What the Buttons look like so far!
+
+
 The main focus of this scratchpad is to test out and develop proof of concepts.
 
 # TODOs! 
