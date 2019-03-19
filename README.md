@@ -30,6 +30,7 @@ The main focus of this scratchpad is to test out and develop proof of concepts.
      - [x] Create a file either .txt or .csv as direct export from Revit document
      - [ ] Use export to create visualisations to avoid imports into Revit Python Wrapper :dizzy_face:
 + Visulation types:
+     - [x] Found filters by System Classification
      - [ ] Systems - Named vs. Unnamed
      - [ ] Systems - MEP Broken down by DUCT vs. PIPE vs. ELEC
      - [ ] Systems - MEP Broken down by Service:
