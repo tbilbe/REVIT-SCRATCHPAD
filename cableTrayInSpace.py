@@ -1,6 +1,6 @@
 SpaceCollector = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_MEPSpaces).WhereElementIsNotElementType().ToElements()
-cTrayCollector = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_CableTray).WhereElementIsNotElementType().ToElements()
 
+cTrayCollector = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_CableTray).WhereElementIsNotElementType().ToElements()
 def midpoint (mepObj):
     p1 = mepObj.Location.Curve.GetEndPoint(0)
     p2 = mepObj.Location.Curve.GetEndPoint(1)
@@ -29,9 +29,10 @@ t = Transaction(doc, 'CableTray Space naming')
 t.Start()
 
 for space in SpaceCollector:
+	spaceNumber = space.LookupParameter('Number')
+	spaceName = space.LookupParameter('Name')
 	for cTray in cTrayCollector:
-		spaceNumber = space.LookupParameter('Number')
-		spaceName = space.LookupParameter('Name')
+
 		setBBKLocation = cTray.LookupParameter('BBK_MEP_LOCATION')
 		# if setBBKLocation.AsString() != None:
 		# 	if spaceNumber.AsString() == setBBKLocation.AsString():
@@ -39,8 +40,10 @@ for space in SpaceCollector:
 		# 		continue
 		#     setBBKLocation.Set('')
 		if setBBKLocation.AsString() == '':
-			if space.IsPointInSpace(dropPointInRoom(midpoint(cTray))) and wholeDuctInRoom(space, cTray):
+			a = space.IsPointInSpace(dropPointInRoom(midpoint(cTray)))
+			b = wholeDuctInRoom(space, cTray)
+			if  a and b:
 				setBBKLocation.Set(spaceNumber.AsString())
-			if space.IsPointInSpace(dropPointInRoom(midpoint(cTray))) and not wholeDuctInRoom(space, cTray):
+			if a and not b:
 				setBBKLocation.Set(str(spaceNumber.AsString()) + ': Duct in two spaces')
 t.Commit()
