@@ -1,4 +1,5 @@
 #TODO programatically add more colors to list as more systems are added
+#check colorsys -> import directly shouldnt need pip iter tools
 
 from Autodesk.Revit.DB import *
 from Autodesk.Revit.DB import FilteredElementCollector, BuiltInCategory
