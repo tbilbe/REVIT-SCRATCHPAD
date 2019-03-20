@@ -1,53 +1,115 @@
-#TODO programatically add more colors to list as more systems are added
-#check colorsys -> import directly shouldnt need pip iter tools
-
+import random
 from Autodesk.Revit.DB import *
 from Autodesk.Revit.DB import FilteredElementCollector, BuiltInCategory
 from pyrevit import script
 doc = __revit__.ActiveUIDocument.Document
 
-__doc__ = "Create a pie chart of ratio of systems by length"
-__title__ = "Duct System\n by Lengths"
+__doc__ = "Create a bar chart of systems by length"
+__title__ = "Systems\n by Lengths"
 __author__ = "Tom Bilbe"
 
+def getMeSomeColors():
+    r = lambda: random.randint(0, 255)
+    return ('#%02X%02X%02X' % (r(),r(),r()))
 
-from pyrevit import script
+
 output = script.get_output()
 #Create Chart - pie chart
-chart = output.make_pie_chart()
+chart = output.make_bar_chart()
 # Title and other options
-chart.options.title = {'display': True,
-                       'text':'Duct Systems by Length',
-                       'fontSize': 18,
-                       'fontColor': '#000',
-                       'fontStyle': 'bold'}
-                       
-chart.set_style('height:150px')
+chart.options = {
+    'scaleShowValues': True,
+    'scales': {
+        'yAxes': [{
+            'ticks': {'beginAtZero': True}
+        }],
+        'xAxes':[{
+            'ticks': {'autoSkip': False}
+        }]
+    }
+}
 
-chart.data.labels = [] #Labels go at the top of the chart
+chart.options['title'] = {'display': True,
+                       'text':'Systems by Length',
+                       'fontSize': 25,
+                       'fontColor': '#1c3f77'}
+chart.set_style('height:500px')
+
 length = 0.0
 
-#DATA
-ductCol = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_DuctCurves).WhereElementIsNotElementType().ToElements()
-dLengthsBySystem = {}
-for len in ductCol:
-	dl = len.LookupParameter('Length')
-	ds = len.LookupParameter('System Classification')
-	if ds.AsString() in dLengthsBySystem:
-		dLengthsBySystem[ds.AsString()] = float(dl.AsValueString()) + float(dLengthsBySystem[ds.AsString()])
-	elif ds.AsString() not in dLengthsBySystem:
-		dLengthsBySystem[ds.AsString()] = dl.AsValueString()
+#Duct Data
+ductCollector = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_DuctCurves).WhereElementIsNotElementType().ToElements()
+ductLengthsBySystem = {}
+for dlen in ductCollector:
+	dl = dlen.LookupParameter('Length')
+	ds = dlen.LookupParameter('System Classification')
+	if ds.AsString() in ductLengthsBySystem:
+		ductLengthsBySystem[ds.AsString()] = float(dl.AsValueString()) + float(ductLengthsBySystem[ds.AsString()])
+	elif ds.AsString() not in ductLengthsBySystem:
+		ductLengthsBySystem[ds.AsString()] = dl.AsValueString() 
+#Pipe Data
+pipeCollector = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_PipeCurves).WhereElementIsNotElementType().ToElements()
+pipeLengthsBySystem = {}
+for pLen in pipeCollector:
+    pl = pLen.LookupParameter('Length')
+    ps = pLen.LookupParameter('System Classification')
+    if ps.AsString() in pipeLengthsBySystem:
+        pipeLengthsBySystem[ps.AsString()] = float(pl.AsValueString()) + float(pipeLengthsBySystem[ps.AsString()])
+    elif ps.AsString() not in pipeLengthsBySystem:
+        pipeLengthsBySystem[ps.AsString()] = pl.AsValueString()
+#CableTray Data
+cableCollector = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_CableTray).WhereElementIsNotElementType().ToElements()
+cableLengthsBySystem = {}
+for cLen in cableCollector:
+    cl = cLen.LookupParameter('Length')
+    cs = cLen.Name
+    if cs in cableLengthsBySystem:
+        cableLengthsBySystem[cs] = float(cl.AsValueString()) + float(cableLengthsBySystem[cs])
+    elif cs not in cableLengthsBySystem:
+        cableLengthsBySystem[cs] = cl.AsValueString()
 
-#data for labals
-for key in dLengthsBySystem:
-    chart.data.labels.append(key)
 
-#create data set - piechart
-setthe = chart.data.new_dataset('Duct Lengths')
-for value in dLengthsBySystem.values():
-    setthe.data.append(value)
-#colour
-setthe.backgroundColor = ["#1F6CB0", "#560764"]
 
+#data for labels
+ductLabel = []
+for key in ductLengthsBySystem:
+    ductLabel.append('Duct System: ' + str(key))
+pipeLabel = []
+for key in pipeLengthsBySystem:
+    pipeLabel.append('Pipe System: '+ str(key))
+cableLabel = []
+for key in cableLengthsBySystem:
+    cableLabel.append('Cable Type: ' + str(key))
+#chart.data.lables is for the X - axis
+chart.data.labels = ductLabel + pipeLabel + cableLabel
+
+'''
+the set*.data list should match the length of the X - axis list
+'''
+
+#create dataset for Ducts (dataset A)
+setTheLengths = chart.data.new_dataset('Lengths (m)')
+for value in ductLengthsBySystem.values():
+    setTheLengths.data.append(float(value) / 1000.0)
+#create dataset for Pipe (dataset B)
+for value in pipeLengthsBySystem.values():
+    setTheLengths.data.append(float(value) / 1000.0)
+# #create dataset for Pipe (dataset C)
+for value in cableLengthsBySystem.values():
+    setTheLengths.data.append(float(value) / 1000.0)
+
+#colour -> we have to get the length of dictionary push that many into the array below
+bgDuct = []
+bgPipe = []
+bgCable = []
+
+for color in range(len(ductLengthsBySystem)):
+    bgDuct.append(getMeSomeColors())
+for color in range(len(pipeLengthsBySystem)):
+    bgPipe.append(getMeSomeColors())
+for color in range(len(cableLengthsBySystem)):
+   bgCable.append(getMeSomeColors())
+setTheLengths.backgroundColor = bgDuct + bgPipe + bgCable #programatically set this and push the string into array here
+setTheLengths.hoverBackgroundColor = '#5b9bd8'
 
 chart.draw()
