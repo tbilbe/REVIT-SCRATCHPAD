@@ -7,7 +7,9 @@ I will be adding more and more scripts as ideas come to me.
 ![Capture](https://user-images.githubusercontent.com/26323783/54621454-ac070300-4a5f-11e9-87c2-895add0142c5.PNG)
 
 The main focus of this scratchpad is to test out and develop proof of concepts.
-
+# Visualisations
+![test_gif1](https://user-images.githubusercontent.com/26323783/54753764-be0cb100-4bd9-11e9-97ad-5848818bb451.gif)
+---
 # TODOs! 
 
 - [x] *CREATE BUTTONS ON RIBBON FOR DISTRIBUTION READY CODE*
