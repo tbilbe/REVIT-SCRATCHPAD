@@ -1,3 +1,11 @@
+from Autodesk.Revit.DB import *
+from Autodesk.Revit.DB import FilteredElementCollector, BuiltInCategory
+doc = __revit__.ActiveUIDocument.Document
+
+__doc__ = "Adds the space name and space number to the BBK_MEP_LOCATION parameter."
+__title__ = "Duct\n in Space"
+__author__ = "Tom Bilbe"
+
 SpaceCollector = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_MEPSpaces).WhereElementIsNotElementType().ToElements()
 ductCollector = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_DuctCurves).WhereElementIsNotElementType().ToElements()
 
@@ -25,21 +33,19 @@ def wholeDuctInRoom (space, duct):
     else:
         return False
 
-t = Transaction(doc, 'Lets fucking do this again')
+t = Transaction(doc, 'Duct - BBKLocation')
 t.Start()
 
 for space in SpaceCollector:
-	for duct in ductCollector:
-		if setBBKLoc.AsString() == None:
-        if space.IsPointInSpace(dropPointInRoom(midpoint(duct))) and wholeDuctInRoom(space, duct):
-			spaceNumber = space.LookupParameter('Number')
-			spaceName = space.LookupParameter('Name')
-			setBBKLoc = duct.LookupParameter('BBK_MEP_LOCATION')
-			setBBKLoc.Set(spaceName.AsString())
-		if space.IsPointInSpace(dropPointInRoom(midpoint(duct))) and not wholeDuctInRoom(space, duct):
-			spaceNumber = space.LookupParameter('Number')
-			spaceName = space.LookupParameter('Name')
-			setBBKLoc = duct.LookupParameter('BBK_MEP_LOCATION')
-			setBBKLoc.Set(str(spaceNumber.AsString()) + ': Duct in two spaces')
+    spaceNumber = space.LookupParameter('Number')
+    spaceName = space.LookupParameter('Name')
+    for duct in ductCollector:
+        setBBKLoc = duct.LookupParameter('BBK_MEP_LOCATION')
+        a = space.IsPointInSpace(dropPointInRoom(midpoint(duct)))
+        b = wholeDuctInRoom(space, duct)
+        if a and b:
+            setBBKLoc.Set(str(spaceNumber.AsString()) + ': '+ str(spaceName.AsString()))
+        if a and not b:
+            setBBKLoc.Set(str(spaceNumber.AsString()) + ': Duct in two spaces')
 
 t.Commit()
