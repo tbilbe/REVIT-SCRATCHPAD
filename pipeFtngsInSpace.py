@@ -20,16 +20,12 @@ t = Transaction(doc, 'Duct Fitting - BBKLocation')
 t.Start()
 
 for space in SpaceCollector:
+	spaceNumber = space.LookupParameter('Number')
+	spaceName = space.LookupParameter('Name')
 	for pipeFtngs in fittingsCollector:
-		unsetBBKLoc = ductFtngs.LookupParameter('BBK_MEP_LOCATION')
 		pipeFtngsInsertPoint = pipeFtngs.Location.Point
-		if unsetBBKLoc.AsString() == '':
-			unsetBBKLoc.Set('')
 		setBBKLoc = pipeFtngs.LookupParameter('BBK_MEP_LOCATION')
-		if setBBKLoc.AsString() == '':
-			if space.IsPointInSpace(dropPointInRoom(pipeFtngsInsertPoint)):
-				spaceNumber = space.LookupParameter('Number')
-				spaceName = space.LookupParameter('Name')
-				setBBKLoc.Set(str(spaceNumber.AsString()) + ': '+ str(spaceName.AsString()))
+		if space.IsPointInSpace(dropPointInRoom(pipeFtngsInsertPoint)):
+			setBBKLoc.Set(str(spaceNumber.AsString()) + ': '+ str(spaceName.AsString()))
 				
 t.Commit()
