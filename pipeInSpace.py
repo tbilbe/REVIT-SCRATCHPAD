@@ -1,3 +1,11 @@
+from Autodesk.Revit.DB import *
+from Autodesk.Revit.DB import FilteredElementCollector, BuiltInCategory
+doc = __revit__.ActiveUIDocument.Document
+
+__doc__ = "Adds the space name and space number to the BBK_MEP_LOCATION parameter."
+__title__ = '''Pipe\n in Space'''
+__author__ = "Tom Bilbe"
+
 SpaceCollector = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_MEPSpaces).WhereElementIsNotElementType().ToElements()
 pipeCollector = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_PipeCurves).WhereElementIsNotElementType().ToElements()
 
@@ -25,17 +33,20 @@ def wholeDuctInRoom (space, mepObj):
     else:
         return False
 
-t = Transaction(doc, 'CableTray Space naming')
+t = Transaction(doc, 'Pipe in Space naming')
 t.Start()
 
 for space in SpaceCollector:
-	for pipe in pipeCollector:
-		spaceNumber = space.LookupParameter('Number')
-		spaceName = space.LookupParameter('Name')
-		setBBKLocation = pipe.LookupParameter('BBK_MEP_LOCATION')
-		if setBBKLocation.AsString() == '':
-			if space.IsPointInSpace(dropPointInRoom(midpoint(pipe))) and wholeDuctInRoom(space, pipe):
-				setBBKLocation.Set(spaceNumber.AsString())
-			if space.IsPointInSpace(dropPointInRoom(midpoint(pipe))) and not wholeDuctInRoom(space, pipe):
-				setBBKLocation.Set(str(spaceNumber.AsString()) + ': Pipe in two spaces')
+    spaceNumber = space.LookupParameter('Number')
+    spaceName = space.LookupParameter('Name')
+    for pipe in pipeCollector:
+        setBBKLocation = pipe.LookupParameter('BBK_MEP_LOCATION')
+        if setBBKLocation.AsString() == '':
+            if pipe.LevelOffset > 6:
+            a = space.IsPointInSpace(dropPointInRoom(midpoint(pipe)))
+            b = wholeDuctInRoom(space, pipe)
+            if a and b:
+                setBBKLocation.Set(spaceNumber.AsString())
+            if a and not b:
+                setBBKLocation.Set(str(spaceNumber.AsString()) + ': Pipe in two spaces')
 t.Commit()
