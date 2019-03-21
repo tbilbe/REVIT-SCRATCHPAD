@@ -40,6 +40,9 @@ for space in SpaceCollector:
     spaceNumber = space.LookupParameter('Number')
     spaceName = space.LookupParameter('Name')
     for duct in ductCollector:
+		unsetBBKLoc = duct.LookupParameter('BBK_MEP_LOCATION')
+		if unsetBBKLoc.AsString() == '':
+			unsetBBKLoc.Set('')
         setBBKLoc = duct.LookupParameter('BBK_MEP_LOCATION')
         a = space.IsPointInSpace(dropPointInRoom(midpoint(duct)))
         b = wholeDuctInRoom(space, duct)
