@@ -15,21 +15,22 @@ The main focus of this scratchpad is to test out and develop proof of concepts.
 - [x] *CREATE BUTTONS ON RIBBON FOR DISTRIBUTION READY CODE*
 - [x] Duct length and Ductwork Surface Area Calculator :boom:
 - [x] Duct Location - Apply room name, room number to ductwork. :boom:
-- [ ] Cable tray location and Length calcs
-- [ ] Pipework location and lengths
-- [ ] Create MEP System analytics
+- [x] Cable tray location and Lengths
+- [x] Pipework location and lengths
+- [x] Create MEP System analytics
      - [x] Captured how to generate system assignment - All MEP systems :octocat:
-     - [ ] Break systems down into MEP classes - Duct/ Air : Pipe/Liquid fluid : CableTray/ Elec
-     - [ ] Capture all plant not assigned to MEP System - Number of items, analysis of which system is worse (Elec / Mech)
+     - [x] Break systems down into MEP classes - Duct/ Air : Pipe/Liquid fluid : CableTray/ Elec
+     - [x] Capture all plant not assigned to MEP System - Number of items, analysis of which system is worse (Elec / Mech)
 - [x] Room and Space name application
      - [x] Understand method how to calculate if object is in Room/ Space.
-     - [ ] Create scripts for both lenghts and fittings:
-          - [ ] Ventilation
-          - [ ] Pipe
+     - [x] Create scripts for both lenghts and fittings:
+          - [x] Ventilation
+          - [x] Pipe
           - [x] Cable tray
 - [ ] Create possible d3 visualisations of all this data collection?
      - [x] Understand how to transact and with document and create file.writeStream()
      - [x] Create a file either .txt or .csv as direct export from Revit document
+     - [ ] Create CSV Point (X,Y,Z) exports for comparisons with arch files. - FOR LCY
      - [ ] Use export to create visualisations to avoid imports into Revit Python Wrapper :dizzy_face:
 + Visulation types:
      - [x] Found filters by System Classification
@@ -45,4 +46,4 @@ The main focus of this scratchpad is to test out and develop proof of concepts.
 
 ---
 # UNKNOWNS
-* try to get all air terminals - add location information here
+
