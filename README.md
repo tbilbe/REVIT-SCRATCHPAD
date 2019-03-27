@@ -3,28 +3,41 @@
 These code snippets can be run inside the python ide in an active Revit project. :snake:
 I will be adding more and more scripts as ideas come to me.
 
+
+The main focus of this scratchpad is to test out and develop proof of concepts.
+
 # What the Buttons look like so far!
 ![icons_for_git](https://user-images.githubusercontent.com/26323783/54754238-f2cd3800-4bda-11e9-9f9b-ad76fc04e8b3.PNG)
 
-The main focus of this scratchpad is to test out and develop proof of concepts.
 # Visualisations
 ![test_gif1](https://user-images.githubusercontent.com/26323783/54753764-be0cb100-4bd9-11e9-97ad-5848818bb451.gif)
 ---
-# Completed Features
+# Completed Features :construction_worker:
 ### Button Creation
 Within the Revit Ribbon we can add buttons to execute scripts both with and without user input. This allows the Revit user to work with the tools without feeling like they are 'hacking' a solution together.
 The source code to the buttons is available to the Revit user by using Alt + leftMouse Click this will show the folder location of the button on their local install of the software.
 
 ### Duct Length and Duct Surface Area Calculator :boom:
-This script can calculate the quantities within the open Revit document to create a report for the BID/ Team or Project Delivery team ahead of site commencement works. This report could also give some indication to the Offsite fabrication teams to help with resourcing and planning ahead of deliveries to site.
+This script can calculate the quantities within the open Revit document to create a report for the BID/ Team or Project Delivery team ahead of site commencement works.
+
+This report could also give some indication to the Offsite fabrication teams to help with resourcing and planning ahead of deliveries to site.
+
 This tool could be ran in conjunction with Location tools to give support to planning and logistics teams around where, and when quantities of supplies would be delivered to site. 
 
----
-# TODOs! 
+### Write Location Parameter to MEP objects :pushpin:
+This tool facilitates the creation of Location data on MEP objects within the Revit whereby it can be exported for use outside of the Revit environment.
 
-- [x] Duct Location - Apply room name, room number to ductwork. :boom:
-- [x] Cable tray location and Lengths
-- [x] Pipework location and lengths
+The tool creates a Transaction within Revit writing to a *Global Parameter* -> **BBK_MEP_LOCATION**
+
+Utilising the Revit Transaction process the script can be turned back, using the built in Undo function (at the top of the Revit window)
+
+The tool writes to both fittings, and lengths (Revit: *MEP_Curves*) giving them a location built upon the space within the model.
+
+The MEP Object has to be within the same model as the space it resides in, the function of the button does not work at this time with linked MEP files. It can however be modified to utilise **Revit Architectural ROOMS**.
+
+---
+# TODOs! :o:
+
 - [x] Create MEP System analytics
      - [x] Captured how to generate system assignment - All MEP systems :octocat:
      - [x] Break systems down into MEP classes - Duct/ Air : Pipe/Liquid fluid : CableTray/ Elec
