@@ -14,10 +14,14 @@ The main focus of this scratchpad is to test out and develop proof of concepts.
 ### Button Creation
 Within the Revit Ribbon we can add buttons to execute scripts both with and without user input. This allows the Revit user to work with the tools without feeling like they are 'hacking' a solution together.
 The source code to the buttons is available to the Revit user by using Alt + leftMouse Click this will show the folder location of the button on their local install of the software.
+
+### Duct Length and Duct Surface Area Calculator :boom:
+This script can calculate the quantities within the open Revit document to create a report for the BID/ Team or Project Delivery team ahead of site commencement works. This report could also give some indication to the Offsite fabrication teams to help with resourcing and planning ahead of deliveries to site.
+This tool could be ran in conjunction with Location tools to give support to planning and logistics teams around where, and when quantities of supplies would be delivered to site. 
+
+---
 # TODOs! 
 
-- [x] *CREATE BUTTONS ON RIBBON FOR DISTRIBUTION READY CODE*
-- [x] Duct length and Ductwork Surface Area Calculator :boom:
 - [x] Duct Location - Apply room name, room number to ductwork. :boom:
 - [x] Cable tray location and Lengths
 - [x] Pipework location and lengths
