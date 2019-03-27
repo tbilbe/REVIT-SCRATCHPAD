@@ -3,7 +3,6 @@
 These code snippets can be run inside the python ide in an active Revit project. :snake:
 I will be adding more and more scripts as ideas come to me.
 
-
 The main focus of this scratchpad is to test out and develop proof of concepts.
 
 # What the Buttons look like so far!
@@ -13,7 +12,7 @@ The main focus of this scratchpad is to test out and develop proof of concepts.
 ![test_gif1](https://user-images.githubusercontent.com/26323783/54753764-be0cb100-4bd9-11e9-97ad-5848818bb451.gif)
 ---
 # Completed Features :construction_worker:
-### Button Creation
+### Button Creation :beer:
 Within the Revit Ribbon we can add buttons to execute scripts both with and without user input. This allows the Revit user to work with the tools without feeling like they are 'hacking' a solution together.
 The source code to the buttons is available to the Revit user by using Alt + leftMouse Click this will show the folder location of the button on their local install of the software.
 
@@ -35,19 +34,16 @@ The tool writes to both fittings, and lengths (Revit: *MEP_Curves*) giving them 
 
 The MEP Object has to be within the same model as the space it resides in, the function of the button does not work at this time with linked MEP files. It can however be modified to utilise **Revit Architectural ROOMS**.
 
+### Room and Space Name Match :bookmark_tabs:
+Quick report to check if Arch and MEP models match on naming.
+
 ---
 # TODOs! :o:
 
-- [x] Create MEP System analytics
+- [ ] Create MEP System analytics
      - [x] Captured how to generate system assignment - All MEP systems :octocat:
      - [x] Break systems down into MEP classes - Duct/ Air : Pipe/Liquid fluid : CableTray/ Elec
-     - [x] Capture all plant not assigned to MEP System - Number of items, analysis of which system is worse (Elec / Mech)
-- [x] Room and Space name application
-     - [x] Understand method how to calculate if object is in Room/ Space.
-     - [x] Create scripts for both lenghts and fittings:
-          - [x] Ventilation
-          - [x] Pipe
-          - [x] Cable tray
+     - [ ] Capture all plant not assigned to MEP System - Number of items, analysis of which system is worse (Elec / Mech)
 - [ ] Create possible d3 visualisations of all this data collection?
      - [x] Understand how to transact and with document and create file.writeStream()
      - [x] Create a file either .txt or .csv as direct export from Revit document
@@ -67,4 +63,4 @@ The MEP Object has to be within the same model as the space it resides in, the f
 
 ---
 # UNKNOWNS
-
+These are obviously unknown :space_invader:
