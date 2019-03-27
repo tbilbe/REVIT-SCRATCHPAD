@@ -1,6 +1,6 @@
 # REVIT-ScratchPad :star:
 ## Info
-These code snippets can be ran inside the python ide in an active Revit project. :snake:
+These code snippets can be run inside the python ide in an active Revit project. :snake:
 I will be adding more and more scripts as ideas come to me.
 
 # What the Buttons look like so far!
@@ -10,6 +10,10 @@ The main focus of this scratchpad is to test out and develop proof of concepts.
 # Visualisations
 ![test_gif1](https://user-images.githubusercontent.com/26323783/54753764-be0cb100-4bd9-11e9-97ad-5848818bb451.gif)
 ---
+# Completed Features
+### Button Creation
+Within the Revit Ribbon we can add buttons to execute scripts both with and without user input. This allows the Revit user to work with the tools without feeling like they are 'hacking' a solution together.
+The source code to the buttons is available to the Revit user by using Alt + leftMouse Click this will show the folder location of the button on their local install of the software.
 # TODOs! 
 
 - [x] *CREATE BUTTONS ON RIBBON FOR DISTRIBUTION READY CODE*
