@@ -37,6 +37,11 @@ The MEP Object has to be within the same model as the space it resides in, the f
 ### Room and Space Name Match :bookmark_tabs:
 Quick report to check if Arch and MEP models match on naming.
 
+## Warnings inside Revit Project :skull:
+This tool outputs to chart.js window at the minute it is a pie chart :cake:
+
+Write to excel database to collect information on project - and ultimately create understanding of what a consultant sees a stage 3 model is at.
+
 ---
 # TODOs! :o:
 
@@ -45,6 +50,7 @@ Quick report to check if Arch and MEP models match on naming.
      - [x] Break systems down into MEP classes - Duct/ Air : Pipe/Liquid fluid : CableTray/ Elec
      - [ ] Capture all plant not assigned to MEP System - Number of items, analysis of which system is worse (Elec / Mech)
 - [ ] Create possible d3 visualisations of all this data collection?
+     - [x] Create output of Warnings on project
      - [x] Understand how to transact and with document and create file.writeStream()
      - [x] Create a file either .txt or .csv as direct export from Revit document
      - [ ] Create CSV Point (X,Y,Z) exports for comparisons with arch files. - FOR LCY
