@@ -45,6 +45,12 @@ Write to excel database to collect information on project - and ultimately creat
 ---
 # TODOs! :o:
 
+- [ ] BBK_MEP_LOCATION
+     - [ ] Duct Accessories - BuiltInCategory.OST_DuctAccessory
+     - [ ] Pipe Accessories - BuiltInCategory.OST_PipeAccessory
+     - [ ] Electrical Fixtures - BuiltInCategory.OST_ElectricalFixtures
+     - [ ] Electrical Equipment - BuiltInCategory.OST_ElectricalEquipment
+
 - [ ] Create MEP System analytics
      - [x] Captured how to generate system assignment - All MEP systems :octocat:
      - [x] Break systems down into MEP classes - Duct/ Air : Pipe/Liquid fluid : CableTray/ Elec
@@ -55,11 +61,11 @@ Write to excel database to collect information on project - and ultimately creat
      - [x] Create a file either .txt or .csv as direct export from Revit document
      - [ ] Create CSV Point (X,Y,Z) exports for comparisons with arch files. - FOR LCY
      - [ ] Use export to create visualisations to avoid imports into Revit Python Wrapper :dizzy_face:
-+ Visulation types:
+- Visulation types:
      - [x] Found filters by System Classification
      - [ ] Systems - Named vs. Unnamed
-     - [ ] Systems - MEP Broken down by DUCT vs. PIPE vs. ELEC
-     - [ ] Systems - MEP Broken down by Service:
+     - [ ] Systems - MEP Broken down by DUCT vs. PIPE vs. ELEC 
+     - [x] Systems - MEP Broken down by Service: - This is a new filtered window implementation
           + DUCT - Services
           + PIPE - Services
           + Elec - Services
