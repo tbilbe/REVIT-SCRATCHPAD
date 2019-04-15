@@ -72,6 +72,11 @@ Write to excel database to collect information on project - and ultimately creat
      - [ ] Linked model data vs MEP consultant model
           * If MEP model has been linked to room names/ numbers
           * If Grids/Levels have Copy/Monitor applied
+- autoBIM Project:
+     - [ ] AutoNaming - utilise a real naming schema against every project
+          * documents are always named using the scehma - 57 for vent, 50 gen mech, 56 Domestic etc.
+     - [ ] AutoLearning - is there a real benefit to using ML/ AI techniques for BIM?
+          * Utilise key learnings and understand if the data can provide insights - working with key Higher Education partners here
 
 ---
 # UNKNOWNS
