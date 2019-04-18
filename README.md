@@ -62,7 +62,7 @@ Write to excel database to collect information on project - and ultimately creat
      - [ ] Create CSV Point (X,Y,Z) exports for comparisons with arch files. - FOR LCY
      - [ ] Use export to create visualisations to avoid imports into Revit Python Wrapper :dizzy_face:
 - Visulation types:
-     - [x] Found filters by System Classification
+     - [x] Find filters by System Classification
      - [ ] Systems - Named vs. Unnamed
      - [ ] Systems - MEP Broken down by DUCT vs. PIPE vs. ELEC 
      - [x] Systems - MEP Broken down by Service: - This is a new filtered window implementation
