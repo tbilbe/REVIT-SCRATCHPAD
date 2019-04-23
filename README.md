@@ -77,6 +77,10 @@ Write to excel database to collect information on project - and ultimately creat
           * documents are always named using the scehma - 57 for vent, 50 gen mech, 56 Domestic etc.
      - [ ] AutoLearning - is there a real benefit to using ML/ AI techniques for BIM?
           * Utilise key learnings and understand if the data can provide insights - working with key Higher Education partners here
+     - [ ] AutoPopulation - 3D geometry and meta data
+          * Auto populate OMNICLASS information - reduce the need for conversation at initial stage surrounding information schemas etc.
+     - [ ] AutoSharing - information 
+          * Red, Amber, Green to support sharing of information - Use Revit Batch Processor here possibly
 
 ---
 # UNKNOWNS
