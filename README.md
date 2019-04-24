@@ -1,12 +1,13 @@
 # REVIT-ScratchPad :star:
 ## Info
-These code snippets can be run inside the python ide in an active Revit project. :snake:
+These code snippets can be run inside the python IDE in an active Revit project. :snake:
+
 I will be adding more and more scripts as ideas come to me.
 
 The main focus of this scratchpad is to test out and develop proof of concepts.
 
 # What the Buttons look like so far!
-![icons_for_git](https://user-images.githubusercontent.com/26323783/54754238-f2cd3800-4bda-11e9-9f9b-ad76fc04e8b3.PNG)
+![icons_for_git_20190424](https://user-images.githubusercontent.com/26323783/56657123-26dec180-668f-11e9-9189-02688a88dfd3.PNG)
 
 # Visualisations
 ![test_gif1](https://user-images.githubusercontent.com/26323783/54753764-be0cb100-4bd9-11e9-97ad-5848818bb451.gif)
