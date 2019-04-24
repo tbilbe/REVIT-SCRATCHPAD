@@ -44,13 +44,15 @@ Write to excel database to collect information on project - and ultimately creat
 
 ---
 # TODOs! :o:
-
+- [ ] Builders work clash tool 
+     - [x] Utilise Dynamo script created by BBK in India
+     - [x] Schedule out Builderswork applying Hole-number property
+     - [ ] Refactor to apply Shared Parameters
 - [ ] BBK_MEP_LOCATION
-     - [ ] Duct Accessories - BuiltInCategory.OST_DuctAccessory
-     - [ ] Pipe Accessories - BuiltInCategory.OST_PipeAccessory
-     - [ ] Electrical Fixtures - BuiltInCategory.OST_ElectricalFixtures
-     - [ ] Electrical Equipment - BuiltInCategory.OST_ElectricalEquipment
-
+     - [x] Duct Accessories - BuiltInCategory.OST_DuctAccessory
+     - [x] Pipe Accessories - BuiltInCategory.OST_PipeAccessory
+     - [x] Electrical Fixtures - BuiltInCategory.OST_ElectricalFixtures
+     - [x] Electrical Equipment - BuiltInCategory.OST_ElectricalEquipment
 - [ ] Create MEP System analytics
      - [x] Captured how to generate system assignment - All MEP systems :octocat:
      - [x] Break systems down into MEP classes - Duct/ Air : Pipe/Liquid fluid : CableTray/ Elec
