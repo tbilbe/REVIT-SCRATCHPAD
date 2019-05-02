@@ -55,7 +55,7 @@ There you have your first collector :metal:
 I have collated a few categories, but the page has about 1000 to search, just use `Ctrl + f` on [the Revit API docs page](http://www.revitapidocs.com/2018.1/ba1c5b30-242f-5fdc-8ea9-ec3b61e6e722.htm) try and find some more to experiment with.
 
 Use this table for inspo | :fire: | :construction_worker:
---- | --- | ---
+:---: | :---: | :---:
 OST_MechanicalEquipment | OST_DuctFitting | OST_PipeAccessories
 OST_ElectricalEquipment | OST_DuctCurves | OST_CableTrayFitting
 OST_ElectricalFixtures | OST_DuctAccessories | OST_CableTray
