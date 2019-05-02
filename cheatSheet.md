@@ -24,11 +24,14 @@ Edit the Init script so that you have access to 2 key variables:
 ```python
 el = '''gives us a list object of the selection so to interact 
         further with the element use bracket notation el[0]'''
-s0 = 'gives us the first element in the list so jumps a step on the el variable'
+s0 = '''gives us the first element in the list so jumps a 
+        step on the el variable'''
 
 # From here you can access methods on the specific elements, for example
 categoryName = s0.Category.Name
-# Note the lookup parameter takes a string which matches the name of the parameter in the project properties window
+
+# Note the lookup parameter takes a string which matches 
+# the name of the parameter in the project properties window
 elevation = s0.LookupParameter('Elevation').AsValueString()
 ```
 ![REPL](https://user-images.githubusercontent.com/26323783/57067342-9e7fa280-6cc6-11e9-8892-6b4e1238cb68.png)
