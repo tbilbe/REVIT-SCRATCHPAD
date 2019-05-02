@@ -22,7 +22,8 @@ Edit the Init script so that you have access to 2 key variables:
 
 #### Inside the REPL
 ```python
-el = 'gives us a list object of the selection so to interact further with the element use bracket notation el[0]'
+el = '''gives us a list object of the selection so to interact 
+        further with the element use bracket notation el[0]'''
 s0 = 'gives us the first element in the list so jumps a step on the el variable'
 
 # From here you can access methods on the specific elements, for example
