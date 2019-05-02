@@ -91,7 +91,8 @@ Place you script logic between the transaction such as writing to a parameter, f
 
 
 
-> Its all very well and good using the REPL to script a few easy things but we want **repeatability!**
+> Its all very well and good using the REPL to script a few easy things but we want **repeatability!**  
+
 lets build a Button!
 
 ## Button Creation
