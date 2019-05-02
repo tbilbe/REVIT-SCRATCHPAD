@@ -95,10 +95,11 @@ Place you script logic between the transaction such as writing to a parameter, f
 
 ## Button Creation
 ##### Using the PyRevit Api
-[ ] link the PyRevit github
-        [ ] write up on Pyrevit
-        [ ] PyRevit Docs
-[ ] Complete how to create a button
+**TODO**
++ link the PyRevit github
++ write up on Pyrevit
++ PyRevit Docs
++ Complete how to create a button
 
 
 ## Addtional Resources
