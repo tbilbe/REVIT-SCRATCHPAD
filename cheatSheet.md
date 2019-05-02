@@ -95,8 +95,16 @@ Place you script logic between the transaction such as writing to a parameter, f
 
 ## Button Creation
 ##### Using the PyRevit Api
-
-
+[ ] link the PyRevit github
+        [ ] write up on Pyrevit
+        [ ] PyRevit Docs
+[ ] Complete how to create a button
 
 
 ## Addtional Resources
++ [The Building Coder - Autodesk Developer Network](https://thebuildingcoder.typepad.com/)
++ [PyRevit Github Repo and blog pages](https://github.com/eirannejad/pyRevit)
++ [Cool Macros, Ideas for new scripts](https://boostyourbim.wordpress.com/)
++ [Dynamo package creation - how to create python nodes](http://archi-lab.net/)
++ [Generic Revit add-ins and python scripts](http://dp-stuff.org/)
++ [SpiderInnet Blog](https://spiderinnet.typepad.com/)
