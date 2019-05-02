@@ -49,7 +49,10 @@ looking into the docs , searching for FilteredElementCollector class will yeild 
 + `WhereElementIsNotElementType()` self explanatory here, we dont want types we want the instances.
 + `ToElements()` Returns the complete set of elements that pass the filter(s).
 
-There you have your first collector :metal:
+![REPL2](https://user-images.githubusercontent.com/26323783/57070019-19988700-6cce-11e9-8f77-890e44cb0bb0.png)
+
+There you have your first collector :metal: 
+##### Scenario Answer: There are 29 pieces of Electrical Equipment
 
 ### BuiltInCategory.OST_
 I have collated a few categories, but the page has about 1000 to search, just use `Ctrl + f` on [the Revit API docs page](http://www.revitapidocs.com/2018.1/ba1c5b30-242f-5fdc-8ea9-ec3b61e6e722.htm) try and find some more to experiment with.
@@ -62,9 +65,35 @@ OST_ElectricalFixtures | OST_DuctAccessories | OST_CableTray
 OST_MEPSpaces | OST_PipeFitting | OST_Conduit
 OST_Rooms | OST_PipeCurves | OST_ConduitFitting
 
+---
+> Hey that's nice that you can read from the Revit project Database, but I need to write loads of data to multiple parameters...:rage:
+
+
+## Transaction Object
+> Here is your cue to go back to your Revit API docs tab!
+We have to use the `Transaction()` class and construct the object, just like the `FilteredElementCollector()` object.  
+The Transaction has a name which is referred to when using the undo, redo keys!  
+
+```
+t = Transaction(doc, 'Electrical Equipment Space Naming Util')
+t.Start()
+'''
+DO SOME REALLY REALLY COOL STUFF!
+'''
+t.Commit()
+```
+
+In the above example in the undo dropdown we would see ‘CableTray Space Naming’ – this parameter can literally be a string!  
+Place you script logic between the transaction such as writing to a parameter, for example giving an element a room name/ space that an element is residing in.
+
+
+
+> Its all very well and good using the REPL to script a few easy things but we want **repeatability!**
+
+## Button Creation
+##### Using the PyRevit Api
 
 
 
 
-
-
+## Addtional Resources
