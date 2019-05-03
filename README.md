@@ -8,15 +8,15 @@ The main focus of this scratchpad is to test out and develop proof of concepts.
 
 ## Get involved
 I have a cheatsheet for beginners to get involved and start the learning process of how to create scripts and buttons in Revit.
->the button building part builds off of the PyRevit library.  
+>the button building part builds off of the PyRevit library. Check the Cheatsheet for more information on PyRevit!
 
 #### [The Revit Cheat Sheet](cheatSheet.md)  :octopus:
 #### Be Warned once you start coding you'll probably get lost in the maze forever! :skull:
 
-# What the Buttons look like so far!
+# What the BBK TAB and .PushButtons look like so far!
 ![icons_for_git_20190424](https://user-images.githubusercontent.com/26323783/56657123-26dec180-668f-11e9-9189-02688a88dfd3.PNG)
 
-# Visualisations
+# Visualisation Scripts
 ![test_gif1](https://user-images.githubusercontent.com/26323783/54753764-be0cb100-4bd9-11e9-97ad-5848818bb451.gif)
 ---
 # Completed Features :construction_worker:
