@@ -7,8 +7,10 @@ I will be adding more and more scripts as ideas come to me.
 The main focus of this scratchpad is to test out and develop proof of concepts.
 
 ## Get involved
-I have a cheatsheet for beginners to get involved and start the learning process of how to create scripts and buttons in Revit this builds off the PyRevit library.
-[the revit cheat sheet](cheatSheet.md)
+I have a cheatsheet for beginners to get involved and start the learning process of how to create scripts and buttons in Revit.
+>the button building part builds off of the PyRevit library.  
+
+#### [The Revit Cheat Sheet](cheatSheet.md)  :octopus:
 #### Be Warned once you start coding you'll probably get lost in the maze forever! :skull:
 
 # What the Buttons look like so far!
