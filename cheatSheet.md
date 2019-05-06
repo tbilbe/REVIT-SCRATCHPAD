@@ -132,7 +132,8 @@ There are two ways to attack this, we can save our script in the python editor a
 ### Button Creation
 ##### Using the PyRevit Api
 **TODO**
-+ link the PyRevit github
+![pyrevit](https://user-images.githubusercontent.com/26323783/57218871-59bd7980-6fee-11e9-8e65-d82dcbdcae1a.png)
+[PyRevit](https://ein.sh/pyRevit/)
 + write up on Pyrevit
 + PyRevit Docs
 + Complete how to create a button
